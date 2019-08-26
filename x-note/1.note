@@ -1,0 +1,21 @@
+1- add column to table:
+    php artisan make:migration add_image_to_users_table --table=users
+
+
+2- create Request
+
+
+3- add column to table:
+    php artian make:migration add_columns_to_foo_table --table=foo
+
+        A new migration file will be created in your migrations directory. Open it and change it like this:
+
+        Schema::table('foo', function ($table) {
+            $table->text('description');
+        });
+        Save it and then run
+
+    php artisan migrate
+
+4- custom migration folder:
+    php artisan migrate:refresh --path=database/migrations/re

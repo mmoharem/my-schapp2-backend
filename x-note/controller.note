@@ -1,0 +1,40 @@
+
+A) Queries:
+
+    1- where
+        $user = DB::table('users')->where('name', 'John')->first();
+
+    2- pluck
+        $titles = DB::table('roles')->pluck('title');
+
+    3- select
+        $users = DB::table('users')->select('name', 'email as user_email')->get();
+
+    4- join
+        $users = DB::table('users')
+                    ->join('contacts', 'users.id', '=', 'contacts.user_id')
+                    ->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->select('users.*', 'contacts.phone', 'orders.price')
+                    ->get();
+
+B)
+    1- index function methods;
+
+        User::get();
+        User::all();
+
+
+C) Relations:
+
+    1- belongsTo:
+        a) store:
+            $account = App\Account::find(10);
+
+            $user->account()->associate($account);
+
+            $user->save();
+
+        b) delete:
+            $user->account()->dissociate();
+
+            $user->save();

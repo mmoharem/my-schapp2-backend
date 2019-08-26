@@ -1,0 +1,7 @@
+1- creating controller
+
+    php artisan make:controller PhotoController --resource --model=Photo
+
+2- creating request:
+
+    php artisan make:request NameRequest
